@@ -10,9 +10,9 @@ export class ElasticsearchService {
   private client: Client;
 
   private queryalldocs = {
-    'size': 50,
-    'query': {
-      'match_all': {}
+    size: 50,
+    query: {
+      match_all: {}
     }
   };
 
@@ -43,4 +43,24 @@ export class ElasticsearchService {
       filterPath: ['hits.hits._source']
     });
   }
+
+  fullTextSearch(_index, _type, _queryText): any {
+    return this.client.search(      {
+      size: 50,
+      query: {
+        bool: {
+          must: {
+        multi_match : {
+          query:  _queryText,
+          fields: [ 'VesselName.trigram', 'ExactName^10' ],
+          fuzziness: 'AUTO'
+        }
+        },
+        should: [{match: {CountryCode: 'IRL'}}]
+
+      }
+     }
+  });
+  }
 }
+
