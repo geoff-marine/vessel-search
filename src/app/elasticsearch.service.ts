@@ -35,26 +35,18 @@ export class ElasticsearchService {
       body: 'Ping from ES is good'
     });
   }
-  getAllDocuments(_index, _type): any {
-    return this.client.search({
-      index: _index,
-      type: _type,
-      body: this.queryalldocs,
-      filterPath: ['hits.hits._source']
-    });
-  }
 
-  fullTextSearch(_index, _type, _queryText): any {
+  fullTextSearch(myIndex, myType, queryText): any {
     return this.client.search(      {
-      index:_index,
-      type:_type,
-      body:{
+      index: myIndex,
+      type: myType,
+      body: {
       size: 50,
        query: {
         bool: {
           must: {
         multi_match : {
-          query:  _queryText,
+          query:  queryText,
           fields: [ 'VesselName.trigram', 'ExactName^10' ],
           fuzziness: 'AUTO'
         }

@@ -4,8 +4,4 @@
   <div *ngFor="let vesselSource of vesselSources" style="margin-top:20px">
     <app-vessel-details [vessel]='vesselSource._source'></app-vessel-details>
   </div>
-
-  <div *ngIf="vesselSources?.length < 1" style="margin-top:20px">
-    <p>Not found!</p>
-  </div>
 </div>

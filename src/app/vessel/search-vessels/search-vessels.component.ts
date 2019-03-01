@@ -12,7 +12,6 @@ export class SearchVesselsComponent implements OnInit {
   private static readonly INDEX = 'vessel';
   private static readonly TYPE = 'mostrecentcfr';
 
-  vesselSources: VesselSource[];
   private queryText = '';
   private lastKeyPress = 0;
 
