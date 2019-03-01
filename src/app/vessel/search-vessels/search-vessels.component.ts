@@ -23,15 +23,14 @@ export class SearchVesselsComponent implements OnInit {
   ngOnInit() {
   }
 
-}
-search($event) {
-  if ($event.timeStamp - this.lastKeypress > 100) {
-    this.queryText = $event.target.value;
 
+search($event) {
+  if ($event.timeStamp - this.lastKeyPress > 100) {
+    this.queryText = $event.target.value;
     this.es.fullTextSearch(
       SearchVesselsComponent.INDEX,
       SearchVesselsComponent.TYPE,
-      'vesselname', this.queryText).then(
+      this.queryText).then(
         response => {
           this.vesselSources = response.hits.hits;
           console.log(response);
@@ -42,6 +41,6 @@ search($event) {
         });
   }
 
-  this.lastKeypress = $event.timeStamp;
+  this.lastKeyPress = $event.timeStamp;
   }
 }

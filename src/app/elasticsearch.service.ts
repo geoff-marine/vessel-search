@@ -46,8 +46,11 @@ export class ElasticsearchService {
 
   fullTextSearch(_index, _type, _queryText): any {
     return this.client.search(      {
+      index:_index,
+      type:_type,
+      body:{
       size: 50,
-      query: {
+       query: {
         bool: {
           must: {
         multi_match : {
@@ -60,6 +63,7 @@ export class ElasticsearchService {
 
       }
      }
+    }
   });
   }
 }
