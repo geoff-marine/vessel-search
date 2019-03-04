@@ -9,7 +9,9 @@ import { ShowVesselComponent } from './vessel/show-vessel/show-vessel.component'
 import { SearchVesselsComponent } from './vessel/search-vessels/search-vessels.component';
 import { EventsSearchComponent } from './events-search/events-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatGridListModule, MatCardModule, MatIconModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFor
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

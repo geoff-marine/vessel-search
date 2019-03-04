@@ -3,14 +3,13 @@
       Welcome to {{title}}!
     </h1>
     <h4>{{description}}</h4>
+
   </div>
-  <mat-toolbar>
-    <mat-toolbar-row>
-      <app-test-es></app-test-es>
-    </mat-toolbar-row>
-    <table mat-table style="text-align:center">
-      <router-outlet></router-outlet>
-    </table>
-    <mat-toolbar-row>
-    </mat-toolbar-row>
-  </mat-toolbar>
+  <div style="margin-left:2%"><app-test-es></app-test-es></div>
+
+  <div style="text-align:center">
+    <router-outlet></router-outlet>
+  </div>
+
+
+

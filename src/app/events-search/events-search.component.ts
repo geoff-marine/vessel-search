@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Vessel } from '../vessel/vessel.interface';
 
 @Component({
   selector: 'app-events-search',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./events-search.component.css']
 })
 export class EventsSearchComponent implements OnInit {
+  @Input() vessel: Vessel;
 
   constructor() { }
 
