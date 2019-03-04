@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'vessel-search';
+  title = 'Vessel Search';
+  description = 'Search engine for finding Vessel data by Vessel Name';
 }

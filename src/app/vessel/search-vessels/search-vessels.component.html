@@ -1,0 +1,7 @@
+<div style="margin-top:20px">
+  <input type="text" (keyup)="search($event)" placeholder="enter vessel name" class="input">
+
+  <div *ngFor="let vesselSource of vesselSources" style="margin-top:20px">
+    <app-vessel-details [vessel]='vesselSource._source'></app-vessel-details>
+  </div>
+</div>
