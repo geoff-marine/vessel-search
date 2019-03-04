@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Vessel Search';
-  description = 'Search engine for finding Vessel data by Vessel Name';
+  description = 'Search engine for finding Vessel data';
 }

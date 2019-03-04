@@ -14,6 +14,7 @@ export class SearchVesselsComponent implements OnInit {
 
   private queryText = '';
   private lastKeyPress = 0;
+  vesselSources: any;
 
   constructor(private es: ElasticsearchService) {
     this.queryText = '';

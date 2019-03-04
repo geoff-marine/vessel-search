@@ -47,7 +47,7 @@ export class ElasticsearchService {
           must: {
         multi_match : {
           query:  queryText,
-          fields: [ 'VesselName.trigram', 'ExactName^10' ],
+          fields: [ 'VesselName.trigram', 'ExactName^10', 'cfr' ],
           fuzziness: 'AUTO'
         }
         },
