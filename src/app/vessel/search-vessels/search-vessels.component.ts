@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VesselSource } from '../vessel.interface';
+import { VesselSource, Vessel } from '../vessel.interface';
 import { ElasticsearchService } from '../../elasticsearch.service';
 
 @Component({
@@ -9,12 +9,14 @@ import { ElasticsearchService } from '../../elasticsearch.service';
 })
 export class SearchVesselsComponent implements OnInit {
 
-  private static readonly INDEX = 'vessel';
-  private static readonly TYPE = 'mostrecentcfr';
+  private static readonly INDEX = 'vesselname';
+  private static readonly TYPE = 'allnames';
 
   private queryText = '';
   private lastKeyPress = 0;
   vesselSources: any;
+  vessel: Vessel;
+
 
   constructor(private es: ElasticsearchService) {
     this.queryText = '';

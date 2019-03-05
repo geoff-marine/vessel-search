@@ -1,4 +1,4 @@
 <div>
-  <app-vessel-details [vessel]="vessel.cfr"></app-vessel-details>
-  <h1>hello from events search</h1>
+    <div *ngFor="let EventsSource of eventsSources" style="margin-top:20px">
+    <app-events-details [events]="EventsSource._source"></app-events-details>
 </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Vessel } from '../vessel/vessel.interface';
+import { ActivatedRoute } from '@angular/router';
+import { ElasticsearchService } from '../elasticsearch.service';
+import { Events} from '../events-search/events.interface';
 
 @Component({
   selector: 'app-events-search',
@@ -7,11 +9,30 @@ import { Vessel } from '../vessel/vessel.interface';
   styleUrls: ['./events-search.component.css']
 })
 export class EventsSearchComponent implements OnInit {
-  @Input() vessel: Vessel;
 
-  constructor() { }
+  private static readonly INDEX = 'allvessels';
+  private static readonly TYPE = 'allevents';
+  eventsSources: any;
+  events: Events;
+
+  constructor(
+    private route: ActivatedRoute,
+    private es: ElasticsearchService
+  ) {
+  }
 
   ngOnInit() {
+    this.getID();
+  }
+  getID(): void {
+  this.es.getEvents(EventsSearchComponent.INDEX,
+    EventsSearchComponent.TYPE, this.route.snapshot.paramMap.get('cfr'))
+    .then(
+      response => {
+        this.eventsSources = response.hits.hits;
+        console.log(response);
+      });
   }
 
 }
+

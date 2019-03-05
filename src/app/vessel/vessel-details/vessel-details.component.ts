@@ -9,10 +9,7 @@ import { Vessel } from '../vessel.interface';
 export class VesselDetailsComponent implements OnInit {
 
   @Input() vessel: Vessel;
-  selectedVessel: Vessel;
-  selectVessel(vessel: Vessel): void {
-    this.selectedVessel = vessel;
-  }
+
 
   constructor() { }
 

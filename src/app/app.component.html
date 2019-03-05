@@ -1,12 +1,15 @@
 <div style="text-align:center">
+  <a [routerLink]="['/search']" routerLinkActive="router-link-active" >
     <h1>
       Welcome to {{title}}!
     </h1>
     <h4>{{description}}</h4>
-
+  </a>
   </div>
-  <div style="margin-left:2%"><app-test-es></app-test-es></div>
-
+  <div style="margin-left:2%">
+  <nav><a [routerLink]="['/search']" routerLinkActive="router-link-active" >Return to Search</a></nav>
+  <p><app-test-es></app-test-es></p>
+  </div>
   <div style="text-align:center">
     <router-outlet></router-outlet>
   </div>

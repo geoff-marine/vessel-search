@@ -17,15 +17,7 @@ export class ShowVesselComponent implements OnInit {
   constructor(private es: ElasticsearchService ) {}
 
   ngOnInit() {
-    this.es.getAllDocuments(ShowVesselComponent.INDEX, ShowVesselComponent.TYPE)
-    .then(response => {
-      this.vesselSources = response.hits.hits;
-      console.log(response);
-    }, error => {
-      console.error(error);
-    }).then(() => {
-      console.log('Show Vessels');
-    });
+
   }
 
 }

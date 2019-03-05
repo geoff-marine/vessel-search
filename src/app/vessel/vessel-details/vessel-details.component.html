@@ -1,5 +1,6 @@
 <div *ngIf="vessel" style="text-align:center">
-    <button mat-button (click)="selectVessel(vessel)">
+
+    <a routerLink="events/{{vessel.cfr}}" routerLinkActive="router-link-active">
   <div>
     <label>Vessel Name: </label> {{vessel.VesselName}}
   </div>
@@ -12,6 +13,7 @@
   <div>
     <label>Loa: </label> {{vessel.Loa}}
   </div>
-</button>
+</a>
   <hr/>
 </div>
+

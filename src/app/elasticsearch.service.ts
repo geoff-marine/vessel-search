@@ -9,13 +9,6 @@ export class ElasticsearchService {
 
   private client: Client;
 
-  private queryalldocs = {
-    size: 50,
-    query: {
-      match_all: {}
-    }
-  };
-
   constructor() {
     if (!this.client) {
       this._connect();
@@ -34,6 +27,20 @@ export class ElasticsearchService {
       requestTimeout: Infinity,
       body: 'Ping from ES is good'
     });
+  }
+
+  getEvents(myIndex, myType, myCFR): any {
+    return this.client.search(
+      {
+        index: myIndex,
+        type: myType,
+        body: {
+          query: {
+            match : {cfr : myCFR}
+          }
+        }
+      }
+    );
   }
 
   fullTextSearch(myIndex, myType, queryText): any {
