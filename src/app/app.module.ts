@@ -9,7 +9,7 @@ import { ShowVesselComponent } from './vessel/show-vessel/show-vessel.component'
 import { SearchVesselsComponent } from './vessel/search-vessels/search-vessels.component';
 import { EventsSearchComponent } from './events-search/events-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatGridListModule, MatCardModule, MatIconModule, MatSortModule } from '@angular/material';
+import { MatGridListModule, MatCardModule, MatIconModule, MatSortModule, MatTableModule  } from '@angular/material';
 import { MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { EventsDetailsComponent } from './events-details/events-details.component';
 import { OrderModule } from 'ngx-order-pipe';
@@ -40,7 +40,8 @@ import { OrderModule } from 'ngx-order-pipe';
     MatInputModule,
     MatGridListModule,
     OrderModule,
-    MatSortModule
+    MatSortModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

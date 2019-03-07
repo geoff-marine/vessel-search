@@ -1,19 +1,24 @@
-<div *ngIf="vessel" style="text-align:center">
+<div>
 
-    <a routerLink="events/{{vessel.cfr}}" routerLinkActive="router-link-active">
-  <div>
-    <label>Vessel Name: </label> {{vessel.VesselName}}
+  <mat-table [dataSource]="dataSource" routerLink="events/{{vessel.cfr}}" routerLinkActive="router-link-active">
+    <ng-container  matColumnDef="VesselName">
+      <mat-header-cell *matHeaderCellDef>Vessel Name</mat-header-cell>
+      <mat-cell *matCellDef="let policy">{{vessel.VesselName}}</mat-cell>
+    </ng-container>
+    <ng-container  matColumnDef="CountryCode">
+      <mat-header-cell *matHeaderCellDef>Country Code</mat-header-cell>
+      <mat-cell *matCellDef="let policy">{{vessel.CountryCode}}</mat-cell>
+    </ng-container>
+    <ng-container  matColumnDef="CFR">
+      <mat-header-cell *matHeaderCellDef>CFR</mat-header-cell>
+      <mat-cell *matCellDef="let policy">{{vessel.cfr}}</mat-cell>
+    </ng-container>
+    <ng-container  matColumnDef="Loa">
+      <mat-header-cell *matHeaderCellDef>Loa</mat-header-cell>
+      <mat-cell *matCellDef="let policy">{{vessel.Loa}}</mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
   </div>
-  <div>
-    <label>Country Code: </label> {{vessel.CountryCode}}
-  </div>
-  <div>
-    <label>CFR: </label> {{vessel.cfr}}
-  </div>
-  <div>
-    <label>Loa: </label> {{vessel.Loa}}
-  </div>
-</a>
-  <hr/>
-</div>
 

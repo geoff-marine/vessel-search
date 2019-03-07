@@ -9,11 +9,12 @@ import { Vessel } from '../vessel.interface';
 export class VesselDetailsComponent implements OnInit {
 
   @Input() vessel: Vessel;
-
-
-  constructor() { }
+  dataSource = [this.vessel];
+  displayedColumns = ['VesselName', 'CFR', 'CountryCode', 'Loa'];
+  constructor() {}
 
   ngOnInit() {
   }
 
 }
+
