@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Vessel } from '../vessel.interface';
+import { MatTableDataSource, MatTable } from '@angular/material';
+import {DataSource} from '@angular/cdk/collections';
+
 
 @Component({
   selector: 'app-vessel-details',
@@ -9,8 +12,8 @@ import { Vessel } from '../vessel.interface';
 export class VesselDetailsComponent implements OnInit {
 
   @Input() vessel: Vessel;
-  dataSource = [this.vessel];
-  displayedColumns = ['VesselName', 'CFR', 'CountryCode', 'Loa'];
+  dataSource = new MatTableDataSource<Vessel>([this.vessel]);
+  displayedColumns = ['VesselName', 'CountryCode', 'CFR', 'Loa'];
   constructor() {}
 
   ngOnInit() {

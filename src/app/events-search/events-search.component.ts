@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ElasticsearchService } from '../elasticsearch.service';
-import { Events} from '../events-search/events.interface';
+import { Events, EventsSource} from '../events-search/events.interface';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-events-search',
@@ -12,8 +13,9 @@ export class EventsSearchComponent implements OnInit {
 
   private static readonly INDEX = 'allvessels';
   private static readonly TYPE = 'allevents';
-  eventsSources: any;
-  events: Events;
+
+  events: EventsSource[];
+  eventsSources = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -23,6 +25,7 @@ export class EventsSearchComponent implements OnInit {
 
   ngOnInit() {
     this.getID();
+
   }
   getID(): void {
   this.es.getEvents(EventsSearchComponent.INDEX,

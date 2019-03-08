@@ -1,39 +1,40 @@
+<div>{{dataSource}}</div>
+<div>{{events | json}}</div>
 <div>
-  <mat-table [dataSource]="dataSource">
+  <mat-table #EventsTable [dataSource]="dataSource">
     <ng-container  matColumnDef="Vessel Name">
       <mat-header-cell *matHeaderCellDef>Vessel Name</mat-header-cell>
-      <mat-cell *matCellDef="let policy">{{events.VesselName}}</mat-cell>
+      <mat-cell *matCellDef="let event">{{event.VesselName}}</mat-cell>
     </ng-container>
     <ng-container  matColumnDef="Country Code">
       <mat-header-cell *matHeaderCellDef>Country Code</mat-header-cell>
-      <mat-cell *matCellDef="let policy">{{events.CountryCode}}</mat-cell>
+      <mat-cell *matCellDef="let event">{{event.CountryCode}}</mat-cell>
     </ng-container>
     <ng-container  matColumnDef="CFR">
       <mat-header-cell *matHeaderCellDef>CFR</mat-header-cell>
-      <mat-cell *matCellDef="let policy">{{events.cfr}}</mat-cell>
+      <mat-cell *matCellDef="let event">{{event.cfr}}</mat-cell>
     </ng-container>
     <ng-container  matColumnDef="Loa">
       <mat-header-cell *matHeaderCellDef>Loa</mat-header-cell>
-      <mat-cell *matCellDef="let policy">{{events.Loa}}</mat-cell>
+      <mat-cell *matCellDef="let event">{{event.Loa}}</mat-cell>
     </ng-container>
     <ng-container  matColumnDef="Lbp">
       <mat-header-cell *matHeaderCellDef>Lbp</mat-header-cell>
-      <mat-cell *matCellDef="let policy">{{events.Lbp}}</mat-cell>
+      <mat-cell *matCellDef="let event">{{event.Lbp}}</mat-cell>
     </ng-container>
     <ng-container  matColumnDef="Event Code">
       <mat-header-cell *matHeaderCellDef>Event Code</mat-header-cell>
-      <mat-cell *matCellDef="let policy">{{events.EventCode}}</mat-cell>
+      <mat-cell *matCellDef="let event">{{event.EventCode}}</mat-cell>
     </ng-container>
     <ng-container  matColumnDef="Event Start Date">
       <mat-header-cell *matHeaderCellDef>Event Start Date</mat-header-cell>
-      <mat-cell *matCellDef="let policy">{{events.EventStartDate}}</mat-cell>
+      <mat-cell *matCellDef="let event">{{event.EventStartDate}}</mat-cell>
     </ng-container>
     <ng-container  matColumnDef="Event End Date">
       <mat-header-cell *matHeaderCellDef>Event End Date</mat-header-cell>
-      <mat-cell *matCellDef="let policy"></mat-cell>
+      <mat-cell *matCellDef="let event">{{event.EventEndDate}}</mat-cell>
     </ng-container>
-    <mat-header-row *matHeaderRowDef="displayedColumns">{{events.EventEndDate}}</mat-header-row>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
   </mat-table>
   </div>
-

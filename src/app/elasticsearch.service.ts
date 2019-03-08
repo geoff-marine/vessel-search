@@ -33,7 +33,7 @@ export class ElasticsearchService {
   }
 
   getEvents(myIndex, myType, myCFR): Observable<Events[]> {
-    return this.client.search(
+    return this.client.search<Events>(
       {
         index: myIndex,
         type: myType,
@@ -46,7 +46,7 @@ export class ElasticsearchService {
     );
   }
 
-  fullTextSearch(myIndex, myType, queryText): Observable<Vessel[]> {
+  fullTextSearch(myIndex, myType, queryText): Observable<Vessel> {
     return this.client.search(      {
       index: myIndex,
       type: myType,
