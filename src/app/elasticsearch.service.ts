@@ -3,7 +3,7 @@ import { Client } from 'elasticsearch-browser';
 import * as elasticsearch from 'elasticsearch-browser';
 import { Observable } from 'rxjs';
 import { Vessel } from './vessel/vessel.interface';
-import { Events } from './events-search/events.interface';
+import { Events, EventsSource } from './events-search/events.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -32,8 +32,8 @@ export class ElasticsearchService {
     });
   }
 
-  getEvents(myIndex, myType, myCFR): Observable<Events[]> {
-    return this.client.search<Events>(
+  getEvents(myIndex, myType, myCFR): Observable<EventsSource[]> {
+    return this.client.search<EventsSource[]>(
       {
         index: myIndex,
         type: myType,

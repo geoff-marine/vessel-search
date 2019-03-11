@@ -15,7 +15,7 @@ export class EventsSearchComponent implements OnInit {
   private static readonly TYPE = 'allevents';
 
   events: EventsSource[];
-  eventsSources = [];
+  eventsSources: EventsSource;
 
   constructor(
     private route: ActivatedRoute,
