@@ -1,3 +1,4 @@
-<p>
-  es-last-update works!
-</p>
+
+  <div *ngFor="let update of lastUpdate">
+    {{update.index}}{{update['creation.date.string'] | date}}
+  </div>

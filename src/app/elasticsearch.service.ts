@@ -4,6 +4,9 @@ import * as elasticsearch from 'elasticsearch-browser';
 import { Observable } from 'rxjs';
 import { Vessel, VesselSource } from './vessel/vessel.interface';
 import { Events, EventsSource } from './events-search/events.interface';
+import { Eslastupdate } from './es-last-update/es-last-update.interface';
+import { format } from 'path';
+import { stringify } from '@angular/core/src/util';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +14,7 @@ import { Events, EventsSource } from './events-search/events.interface';
 export class ElasticsearchService {
 
   private client: Client;
+
 
   constructor() {
     if (!this.client) {
@@ -32,8 +36,11 @@ export class ElasticsearchService {
     });
   }
 
-  lastUpdate(): any {
-    return this.client.cat.indices(['h=h,s,i,id,p,r,dc,dd,ss,creation.date.string&format=json&pretty']);
+  lastUpdate(): Observable<Eslastupdate[]> {
+    return this.client.cat.indices({
+      h: 'index, creation.date.string',
+      format : 'json'}
+    );
   }
 
   getEvents(myIndex, myType, myCFR): Observable<EventsSource[]> {
