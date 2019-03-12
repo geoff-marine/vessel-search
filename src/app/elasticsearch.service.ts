@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Client } from 'elasticsearch-browser';
 import * as elasticsearch from 'elasticsearch-browser';
 import { Observable } from 'rxjs';
-import { Vessel } from './vessel/vessel.interface';
+import { Vessel, VesselSource } from './vessel/vessel.interface';
 import { Events, EventsSource } from './events-search/events.interface';
 
 @Injectable({
@@ -40,13 +40,16 @@ export class ElasticsearchService {
         body: {
           query: {
             match : {cfr : myCFR}
-          }
+          },
+          sort: [
+            {EventEndDate: {order : 'desc'}}
+          ]
         }
       }
     );
   }
 
-  fullTextSearch(myIndex, myType, queryText): Observable<Vessel> {
+  fullTextSearch(myIndex, myType, queryText): Observable<VesselSource[]> {
     return this.client.search(      {
       index: myIndex,
       type: myType,
