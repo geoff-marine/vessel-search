@@ -1,18 +1,17 @@
-<div style="text-align:center">
-  <a [routerLink]="['/search']" routerLinkActive="router-link-active" >
-    <h1>
-      Welcome to {{title}}!
-    </h1>
-    <h4>{{description}}</h4>
-  </a>
-  </div>
-  <div style="margin-left:2%">
-  <nav><a [routerLink]="['/search']" routerLinkActive="router-link-active" >Return to Search</a></nav>
-  <p><app-test-es></app-test-es></p>
-  </div>
-  <div style="text-align:center">
-    <router-outlet></router-outlet>
-  </div>
-
-
-
+<div>
+  <mat-toolbar color="primary">
+      <mat-toolbar-row mat-button [routerLink]="['/search']" routerLinkActive="router-link-active" >
+        Welcome to {{title}}
+    </mat-toolbar-row>
+  </mat-toolbar>
+    </div>
+    <mat-sidenav-container>
+        <mat-sidenav #sidenav mode="side">
+            <mat-list>
+              <mat-list-item><p><app-test-es></app-test-es></p></mat-list-item>
+            </mat-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <p><button mat-button (click)="sidenav.toggle()">Show server information</button></p>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>

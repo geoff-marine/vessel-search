@@ -1,6 +1,6 @@
 
 <div>
-  <mat-table [dataSource]="vessel">
+  <table mat-table [dataSource]="vessel" class="mat-elevation-z8">
     <ng-container  matColumnDef="VesselName">
       <mat-header-cell *matHeaderCellDef>Vessel Name</mat-header-cell>
       <mat-cell *matCellDef="let row">{{row._source.VesselName}}</mat-cell>
@@ -22,6 +22,6 @@
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns" routerLink="events/{{row._source.cfr}}" routerLinkActive="router-link-active"></mat-row>
-  </mat-table>
+  </table>
   </div>
 

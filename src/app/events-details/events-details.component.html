@@ -1,5 +1,5 @@
 <div>
-  <table mat-table  [dataSource]="events" class="mat-elevation-z8">
+  <table mat-table  [dataSource]="events" class="mat-elevation-z8" [routerLink]="['/search']" routerLinkActive="router-link-active">
     <ng-container  matColumnDef="Vessel Name">
       <mat-header-cell *matHeaderCellDef>Vessel Name</mat-header-cell>
       <mat-cell *matCellDef="let event">{{event._source.VesselName}}</mat-cell>

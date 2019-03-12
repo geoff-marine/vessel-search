@@ -32,6 +32,10 @@ export class ElasticsearchService {
     });
   }
 
+  lastUpdate(): any {
+    return this.client.cat.indices(['h=h,s,i,id,p,r,dc,dd,ss,creation.date.string&format=json&pretty']);
+  }
+
   getEvents(myIndex, myType, myCFR): Observable<EventsSource[]> {
     return this.client.search<EventsSource[]>(
       {
