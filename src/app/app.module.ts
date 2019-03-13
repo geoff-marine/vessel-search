@@ -14,6 +14,7 @@ import { MatToolbarModule, MatButtonModule, MatFormFieldModule, MatListModule } 
 import { EventsDetailsComponent } from './events-details/events-details.component';
 import { OrderModule } from 'ngx-order-pipe';
 import { EsLastUpdateComponent } from './es-last-update/es-last-update.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 
@@ -44,6 +45,7 @@ import { EsLastUpdateComponent } from './es-last-update/es-last-update.component
     OrderModule,
     MatSidenavModule,
     MatTableModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,8 +9,31 @@
         <mat-sidenav #sidenav mode="side">
             <mat-list>
               <mat-list-item><p><app-test-es></app-test-es></p></mat-list-item>
+              <mat-list-item></mat-list-item>
               <mat-list-item><app-es-last-update></app-es-last-update></mat-list-item>
             </mat-list>
+            <br>
+            <br>
+            <table>
+              <thead>
+                  <b>Index Information</b>
+              </thead>
+              <tr>
+                <td>
+                    <i>vesselname</i> is an entry of each known vessel.
+                    It is searachable by vessel name or CFR.
+                    The most recent data know on that vessel is returned.
+                    In the situtation where an older, out of date name is used, the latest
+                    information that was available up to that name change is returned.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <i>allvessels</i> is a list of all know events recorded against that
+                    CFR number selected from searching against vessel names.
+                </td>
+              </tr>
+            </table>
         </mat-sidenav>
         <mat-sidenav-content>
             <p><button mat-button (click)="sidenav.toggle()">Show server information</button></p>

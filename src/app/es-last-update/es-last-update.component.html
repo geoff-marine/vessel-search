@@ -1,4 +1,14 @@
-
-  <div *ngFor="let update of lastUpdate">
-    {{update.index}}{{update['creation.date.string'] | date}}
+  <div>
+    <table style="float:top">
+      <thead>
+        <th>Index</th>
+        <th>Updated</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let update of lastUpdate">
+           <td>{{update.index}}</td>
+           <td>{{update['creation.date.string'] | date}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>

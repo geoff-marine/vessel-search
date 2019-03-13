@@ -2,11 +2,10 @@ import { Injectable } from '@angular/core';
 import { Client } from 'elasticsearch-browser';
 import * as elasticsearch from 'elasticsearch-browser';
 import { Observable } from 'rxjs';
-import { Vessel, VesselSource } from './vessel/vessel.interface';
-import { Events, EventsSource } from './events-search/events.interface';
+import { VesselSource } from './vessel/vessel.interface';
+import { EventsSource } from './events-search/events.interface';
 import { Eslastupdate } from './es-last-update/es-last-update.interface';
-import { format } from 'path';
-import { stringify } from '@angular/core/src/util';
+
 
 @Injectable({
   providedIn: 'root'
