@@ -1,7 +1,7 @@
 <div>
-  <mat-toolbar color="primary">
-      <mat-toolbar-row mat-button [routerLink]="['/search']" routerLinkActive="router-link-active" >
-        Welcome to {{title}}
+  <mat-toolbar>
+      <mat-toolbar-row mat-button [routerLink]="['/search']" routerLinkActive="router-link-active">
+      <img src ="assets/img/mi_logo.gif" class="mi_image">
     </mat-toolbar-row>
   </mat-toolbar>
     </div>
@@ -37,5 +37,6 @@
         </mat-sidenav>
         <mat-sidenav-content>
             <p><button mat-button (click)="sidenav.toggle()">Show server information</button></p>
+            <h3 mat-button [routerLink]="['/search']" routerLinkActive="router-link-active" style="text-align: center">Welcome to {{title}}</h3>
             <router-outlet></router-outlet>
         </mat-sidenav-content>
