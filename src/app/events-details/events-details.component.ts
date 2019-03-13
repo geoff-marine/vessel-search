@@ -12,7 +12,7 @@ import {MatSort, MatTableDataSource} from '@angular/material';
 export class EventsDetailsComponent implements OnInit {
 
   @Input() events: EventsSource[];
-  public displayedColumns = ['Vessel Name', 'Country Code', 'CFR', 'Loa', 'Lbp', 'Event Code', 'Event Start Date', 'Event End Date'];
+  public displayedColumns = ['Vessel Name', 'Country Code', 'CFR', 'Loa', 'Event Code', 'Event Start Date', 'Event End Date'];
 
   constructor() {
    }

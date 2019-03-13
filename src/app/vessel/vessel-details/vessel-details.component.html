@@ -2,22 +2,22 @@
 <div>
   <table mat-table [dataSource]="vessel" class="mat-elevation-z8">
     <ng-container  matColumnDef="VesselName">
-      <mat-header-cell *matHeaderCellDef>Vessel Name</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef><h3>Vessel Name</h3></mat-header-cell>
       <mat-cell *matCellDef="let row">{{row._source.VesselName}}</mat-cell>
     </ng-container>
     <ng-container  matColumnDef="CountryCode">
-      <mat-header-cell *matHeaderCellDef>Country Code</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef><h3>Country Code</h3></mat-header-cell>
       <mat-cell *matCellDef="let row">{{row._source.CountryCode}}</mat-cell>
     </ng-container>
     <ng-container  matColumnDef="CFR">
-      <mat-header-cell *matHeaderCellDef>CFR</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef><h3>CFR</h3></mat-header-cell>
       <mat-cell *matCellDef="let row">
         <a routerLink="events/{{row._source.cfr}}" routerLinkActive="router-link-active">
         {{row._source.cfr}} </a>
       </mat-cell>
     </ng-container>
     <ng-container  matColumnDef="Loa">
-      <mat-header-cell *matHeaderCellDef>Loa</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef><h3>Loa</h3></mat-header-cell>
       <mat-cell *matCellDef="let row">{{row._source.Loa}}</mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
