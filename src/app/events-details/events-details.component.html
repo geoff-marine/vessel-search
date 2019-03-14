@@ -26,11 +26,11 @@
     </ng-container>
     <ng-container  matColumnDef="Event Start Date">
       <mat-header-cell *matHeaderCellDef>Event Start Date</mat-header-cell>
-      <mat-cell *matCellDef="let event">{{event._source.EventStartDate | date}}</mat-cell>
+      <mat-cell *matCellDef="let event">{{event._source.EventStartDate | amDateFormat:'DD.MM.YYYY'}}</mat-cell>
     </ng-container>
     <ng-container  matColumnDef="Event End Date">
       <mat-header-cell *matHeaderCellDef>Event End Date</mat-header-cell>
-      <mat-cell *matCellDef="let event">{{event._source.EventEndDate | date}}</mat-cell>
+      <mat-cell *matCellDef="let event">{{event._source.EventEndDate | amDateFormat:'DD.MM.YYYY' }}</mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
