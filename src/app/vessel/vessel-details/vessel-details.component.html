@@ -10,15 +10,23 @@
       <mat-cell *matCellDef="let row">{{row._source.CountryCode}}</mat-cell>
     </ng-container>
     <ng-container  matColumnDef="CFR">
-      <mat-header-cell *matHeaderCellDef><h3>CFR</h3></mat-header-cell>
-      <mat-cell *matCellDef="let row">
+      <mat-header-cell *matHeaderCellDef matTooltip="Community fleet register number"><h3>CFR</h3></mat-header-cell>
+      <mat-cell *matCellDef="let row" matTooltip="Community fleet register number">
         <a routerLink="events/{{row._source.cfr}}" routerLinkActive="router-link-active">
         {{row._source.cfr}} </a>
       </mat-cell>
     </ng-container>
     <ng-container  matColumnDef="Loa">
-      <mat-header-cell *matHeaderCellDef><h3>Loa</h3></mat-header-cell>
-      <mat-cell *matCellDef="let row">{{row._source.Loa}}</mat-cell>
+      <mat-header-cell *matHeaderCellDef matTooltip="Length over all in metres"><h3>Loa</h3></mat-header-cell>
+      <mat-cell *matCellDef="let row" matTooltip="Length over all in metres">{{row._source.Loa}}</mat-cell>
+    </ng-container>
+    <ng-container  matColumnDef="TonRef">
+      <mat-header-cell *matHeaderCellDef><h3>Tonnage  Reference</h3></mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row._source.TonRef}}</mat-cell>
+    </ng-container>
+    <ng-container  matColumnDef="PowerMain">
+      <mat-header-cell *matHeaderCellDef matTooltip="Power of main engine"><h3>Power Main</h3></mat-header-cell>
+      <mat-cell *matCellDef="let row" matTooltip="Power of main engine">{{row._source.PowerMain}}</mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns" routerLink="events/{{row._source.cfr}}" routerLinkActive="router-link-active"></mat-row>

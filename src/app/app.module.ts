@@ -11,6 +11,7 @@ import { EventsSearchComponent } from './events-search/events-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule, MatCardModule, MatIconModule, MatSidenavModule, MatTableModule  } from '@angular/material';
 import { MatToolbarModule, MatButtonModule, MatFormFieldModule, MatListModule } from '@angular/material';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import { EventsDetailsComponent } from './events-details/events-details.component';
 import { OrderModule } from 'ngx-order-pipe';
 import { EsLastUpdateComponent } from './es-last-update/es-last-update.component';
@@ -47,7 +48,8 @@ import { MomentModule } from 'ngx-moment';
     MatSidenavModule,
     MatTableModule,
     FlexLayoutModule,
-    MomentModule
+    MomentModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

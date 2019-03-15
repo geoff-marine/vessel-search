@@ -11,7 +11,7 @@ import { MatTableDataSource, MatTable } from '@angular/material';
 export class VesselDetailsComponent implements OnInit {
 
   @Input() vessel: VesselSource[];
-  displayedColumns = ['VesselName', 'CountryCode', 'CFR', 'Loa'];
+  displayedColumns = ['VesselName', 'CountryCode', 'CFR', 'Loa', 'TonRef', 'PowerMain'];
   constructor() {}
 
   ngOnInit() {

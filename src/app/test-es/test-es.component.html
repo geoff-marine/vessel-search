@@ -1,1 +1,2 @@
-<h5>Elastic Search Server Status: {{status}}</h5>
+<div *ngIf="status === 'OK'" style="color:green"><h5>Elastic Search Server Status: {{status}}</h5></div>
+<div *ngIf="status === 'ERROR'" style="color:red"><h5>Elastic Search Server Status: {{status}}</h5></div>

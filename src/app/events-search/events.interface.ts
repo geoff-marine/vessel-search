@@ -9,6 +9,8 @@ export interface Events {
   EventCode: string;
   EventStartDate: string;
   EventEndDate: string;
+  TonRef: string;
+  PowerMain: string;
 }
 
 export interface EventsSource extends Array<Events> {
@@ -23,6 +25,8 @@ export interface EventsSource extends Array<Events> {
   EventCode: string;
   EventStartDate: string;
   EventEndDate: string;
+  TonRef: string;
+  PowerMain: string;
 
 }
 

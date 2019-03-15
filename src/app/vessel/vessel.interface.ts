@@ -7,6 +7,8 @@ export interface Vessel {
   PortName: string;
   Loa: string;
   Lbp: string;
+  TonRef: string;
+  PowerMain: string;
 }
 
 export interface VesselSource extends Array<Vessel> {
@@ -18,5 +20,7 @@ export interface VesselSource extends Array<Vessel> {
   PortName: string;
   Loa: string;
   Lbp: string;
+  TonRef: string;
+  PowerMain: string;
 }
 
