@@ -527,6 +527,7 @@ var _assets_urls_env_specfic_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__
 var ElasticsearchService = /** @class */ (function () {
     function ElasticsearchService() {
         this.esurl = _assets_urls_env_specfic_json__WEBPACK_IMPORTED_MODULE_3__.esserver;
+        this.esurl = _assets_urls_env_specfic_json__WEBPACK_IMPORTED_MODULE_3__.esserver;
         if (!this.client) {
             console.log('this is my url from env-speficjson' + this.esurl);
             this._connect();
