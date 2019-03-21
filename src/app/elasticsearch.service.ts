@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { VesselSource } from './vessel/vessel.interface';
 import { EventsSource } from './events-search/events.interface';
 import { Eslastupdate } from './es-last-update/es-last-update.interface';
+import esServerUrl from '../assets/urls/env-specfic.json';
 
 
 @Injectable({
@@ -13,17 +14,19 @@ import { Eslastupdate } from './es-last-update/es-last-update.interface';
 export class ElasticsearchService {
 
   private client: Client;
+  private esurl = esServerUrl.esserver;
 
 
   constructor() {
     if (!this.client) {
+      console.log('this is my url from env-speficjson' + this.esurl);
       this._connect();
     }
   }
 
   private _connect() {
     this.client = new elasticsearch.Client({
-      host: 'http://10.11.1.70:9200',
+      host: this.esurl,
       log: 'trace'
     });
   }
