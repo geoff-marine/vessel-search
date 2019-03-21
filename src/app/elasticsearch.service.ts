@@ -18,6 +18,7 @@ export class ElasticsearchService {
 
 
   constructor() {
+    this.esurl = esServerUrl.esserver;
     if (!this.client) {
       console.log('this is my url from env-speficjson' + this.esurl);
       this._connect();
